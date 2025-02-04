@@ -74,12 +74,13 @@
                 console.error('Error loading Embedded Messaging: ', err);
             }
         };
+        var appName = "NetSuite";
         //set visible prechat field
         embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
             // List the pre-chat field names with the value and whether
             // it's editable in the pre-chat form.
             "sf_org_id": {
-              "value": "NetSuite",
+              "value": appName,
               "isEditableByEndUser": true
             }
         });
