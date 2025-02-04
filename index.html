@@ -3,26 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Hello, World!</title>
     <style>
+        /* Full-screen gradient background */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #ff00ff, #ff9900, #00ccff, #ff0066);
+            background-size: 400% 400%;
+            animation: gradientBG 8s ease infinite;
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            overflow: hidden;
         }
+
+        /* Background animation */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Animated Text */
         h1 {
-            color: #333;
-            font-size: 3rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: scale(0.5);
+            animation: fadeInScale 1.5s ease-out forwards;
+        }
+
+        /* Text animation */
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.5); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        h1 {
+            animation: fadeInScale 1.5s ease-out forwards, float 3s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
     <h1>Hello, World!</h1>
 
+    <!-- Salesforce Embedded Messaging Script -->
     <script type="text/javascript">
         function initEmbeddedMessaging() {
             try {
@@ -46,6 +80,5 @@
         src="https://orgfarm-05d1c1e521-dev-ed.develop.my.site.com/ESWBWDemoAgent1738655931702/assets/js/bootstrap.min.js" 
         onload="initEmbeddedMessaging()">
     </script>
-
 </body>
 </html>
