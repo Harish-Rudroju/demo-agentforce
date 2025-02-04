@@ -79,10 +79,14 @@
         embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
             // List the pre-chat field names with the value and whether
             // it's editable in the pre-chat form.
-            "sf_org_id": {
+            "App_Name": {
               "value": appName,
               "isEditableByEndUser": true
             }
+        });
+        //Set invisible prechat field
+        embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+            "sf_org_id" : "00001000"
         });
     </script>
 
